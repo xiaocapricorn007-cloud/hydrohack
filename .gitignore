@@ -26,6 +26,7 @@ outputs_*/
 # tests/synthetic_box.py without external dependencies.
 data/*.xlsx
 !data/sample_box.xlsx
+!data/official.xlsx
 
 # IDE / editor cruft
 .idea/

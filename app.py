@@ -210,22 +210,33 @@ with st.sidebar:
              "'Offsets' matrix of half-breadths (stations × waterlines). "
              "See the README for the exact layout.",
     )
+    _official_path = Path(__file__).parent / "data" / "official.xlsx"
+    use_official = st.checkbox(
+        "Use bundled WAVEZ 2026 official input",
+        value=_official_path.exists() and uploaded is None,
+        help="VLOC particulars + 23×11 offset table from the IITM-released "
+             "competition workbook. Recommended for the demo.",
+        disabled=not _official_path.exists(),
+    )
     use_sample = st.checkbox("Use bundled sample box hull", value=False,
                              help="Wall-sided rectangular block — used for analytical validation.")
 
 
-if uploaded is None and not use_sample:
+if uploaded is None and not use_sample and not use_official:
     st.info(
-        "Upload an offsets workbook in the sidebar, or tick the **sample box** "
-        "checkbox to demo the solver against a wall-sided rectangular hull "
-        "with known analytical answers."
+        "Upload an offsets workbook in the sidebar, tick **WAVEZ 2026 official input** "
+        "to load the bundled competition file, or tick **sample box** to validate "
+        "against a wall-sided rectangular hull with known analytical answers."
     )
     st.stop()
 
 
 # Resolve the bytes + a friendly source name first; we'll then peek at the
 # layout to decide whether KG / ρ must be supplied before we can parse it.
-if use_sample:
+if use_official:
+    file_bytes = _official_path.read_bytes()
+    source_name = "official.xlsx"
+elif use_sample:
     sample_path = Path(__file__).parent / "data" / "sample_box.xlsx"
     if not sample_path.exists():
         from tests.synthetic_box import write_sample_xlsx
