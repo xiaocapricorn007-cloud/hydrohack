@@ -1,0 +1,109 @@
+{
+  "input_file": "data/official.xlsx",
+  "LOA": 420.95,
+  "LBP": 399.29,
+  "B": 63.0,
+  "D": 37.269,
+  "T": 28.5,
+  "CB_listed": 0.78,
+  "rho": 1.025,
+  "KG": 20.5,
+  "KG_method": "Schneekluth & Bertram (1998), C_KG=0.55 (low-end bulk-carrier band)",
+  "upright": {
+    "V_m3": 554119.3002027033,
+    "Delta_t": 567972.2827077708,
+    "CB_computed": 0.7729109034907098,
+    "Aw_m2": 21762.604267233903,
+    "CWP": 0.8651310149815089,
+    "CM": 0.9851243698134226,
+    "Cp": 0.7845820560068929,
+    "Sw_m2": 39379.75905494271,
+    "LCB_m": 208.16651580900353,
+    "LCF_m": 199.38116782456635,
+    "KB_m": 15.022610735171428,
+    "BMt_m": 11.42977189853152,
+    "BMl_m": 411.7071863899048,
+    "KMt_m": 26.452382633702946,
+    "KMl_m": 426.72979712507623,
+    "GMt_m": 5.952382633702946,
+    "GMl_m": 406.22979712507623,
+    "TPC_t_per_cm": 223.0666937391475,
+    "MCT_t_m_per_cm": 5778.438357510686
+  },
+  "stability": {
+    "max_GZ_m": 2.4718450159034635,
+    "heel_of_max_GZ_deg": 31.0,
+    "vanishing_angle_deg": 77.47675941658063,
+    "area_0_30_m_rad": 0.7879535809739726,
+    "area_0_40_m_rad": 1.2138818349861937,
+    "area_30_40_m_rad": 0.425928254012221,
+    "overall_pass": true,
+    "criteria": [
+      {
+        "name": "Initial GMt",
+        "value": 5.952382633702946,
+        "units": "m",
+        "threshold": 0.15,
+        "pass": true,
+        "note": "transverse metacentric height at zero heel"
+      },
+      {
+        "name": "Maximum GZ",
+        "value": 2.4718450159034635,
+        "units": "m",
+        "threshold": 0.2,
+        "pass": true,
+        "note": "peak at \u03c6 = 31.0\u00b0  (must be \u2265 30\u00b0)"
+      },
+      {
+        "name": "Angle of max GZ",
+        "value": 31.0,
+        "units": "deg",
+        "threshold": 30.0,
+        "pass": true,
+        "note": "heel at which the righting arm peaks"
+      },
+      {
+        "name": "Vanishing angle",
+        "value": 77.47675941658063,
+        "units": "deg",
+        "threshold": 60.0,
+        "pass": true,
+        "note": "first heel at which GZ returns to zero after peak"
+      },
+      {
+        "name": "Area 0\u00b0\u201330\u00b0",
+        "value": 0.7879535809739726,
+        "units": "m\u00b7rad",
+        "threshold": 0.055,
+        "pass": true,
+        "note": "\u222b\u2080\u00b3\u2070 GZ d\u03c6"
+      },
+      {
+        "name": "Area 0\u00b0\u201340\u00b0",
+        "value": 1.2138818349861937,
+        "units": "m\u00b7rad",
+        "threshold": 0.09,
+        "pass": true,
+        "note": "\u222b\u2080\u2074\u2070 GZ d\u03c6"
+      },
+      {
+        "name": "Area 30\u00b0\u201340\u00b0",
+        "value": 0.425928254012221,
+        "units": "m\u00b7rad",
+        "threshold": 0.03,
+        "pass": true,
+        "note": "\u222b\u2083\u2080\u2074\u2070 GZ d\u03c6"
+      }
+    ]
+  },
+  "trim_self_check": {
+    "LCG_input_m": 208.16651580900353,
+    "theta_deg": 0.0,
+    "trim_m": 0.0,
+    "T_mean_m": 28.501094696044923,
+    "V_balanced_m3": 554143.1237033337,
+    "LCB_balanced_m": 208.16613810575123,
+    "converged": true
+  }
+}
